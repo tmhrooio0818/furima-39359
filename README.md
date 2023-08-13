@@ -5,9 +5,9 @@
 ## users テーブル
 
 | Column             | Type   | Options                 |
-| nickname           | string | null:false, unique:true |
+| nickname           | string | null:false              |
 | email              | string | null:false, unique:true |
-| encrypted_password | string | null:false, unique:true |
+| encrypted_password | string | null:false              |
 | last_name          | string | null:false              |
 | first_name         | string | null:false              |
 | last_nme_kane      | string | null:false              |
@@ -21,11 +21,16 @@
 
 ## items テーブル
 
-| Column          | Type       | Options                  |
-| user            | references | null:false, foreign:true |
-| title           | string     | null:false               |
-| detail          | string     | null:false               |
-| price           | integer    | null:false               |
+| Column           | Type       | Options                  |
+| user             | references | null:false, foreign:true |
+| title            | string     | null:false               |
+| detail           | string     | null:false               |
+| price            | integer    | null:false               |
+| quality_id       | integer    | null:false               |
+| shipping_fee_id  | integer    | null:false               |
+| prefecture_id    | integer    | null:false               |
+| shipping_date_id | integer    | null:false               |
+| category_id      | integer    | null:false               |
 
 ### Association
 
@@ -48,12 +53,12 @@
 
 | Column         | Type       | Options                       |
 | order          | references | null:false, foreign_key: true |
-| postcode       | integer    | null:false                    |
-| prefecture     | string     | null:false                    |
+| postcode       | string     | null:false                    |
+| prefecture_id  | integer    | null:false                    |
 | city           | string     | null:false                    |
 | address_number | string     | null:false                    |
-| building       | string     | null:false                    |
-| phone_number   | integer    | null:false                    |
+| building       | string     |                               |
+| phone_number   | string     | null:false                    |
 
 ### Association
 
