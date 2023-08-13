@@ -24,7 +24,7 @@
 | Column           | Type       | Options                  |
 | user             | references | null:false, foreign:true |
 | title            | string     | null:false               |
-| detail           | text       | null:false               |
+| detail           | string     | null:false               |
 | price            | integer    | null:false               |
 | quality_id       | integer    | null:false               |
 | shipping_fee_id  | integer    | null:false               |
@@ -34,8 +34,8 @@
 
 ### Association
 
-- belongs_to :user
-- has_one :order
+- belogs_to :user
+- has_many :order
 
 ## orders テーブル
 
