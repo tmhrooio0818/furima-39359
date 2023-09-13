@@ -90,20 +90,40 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
+      it '名字が空欄だ登録できない' do
+        @user.last_name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name can't be blank")
+      end
       it '名字が全角（漢字・ひらがな・カタカナ）でないと登録できない' do
         @user.last_name = 'yamada'
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name Input full-width characters")
+      end
+      it '名前が空欄だ登録できない' do
+        @user.first_name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name can't be blank")
       end
       it '名前が全角（漢字・ひらがな・カタカナ）でないと登録できない' do
         @user.first_name = 'rikutaro'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name Input full-width characters")
       end
+      it '名字のフリガナが空欄だ登録できない' do
+        @user.last_name_kana = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name kana can't be blank")
+      end
       it '名字のフリガナが全角（カタカナ）でないと登録できない' do
         @user.last_name_kana = 'やまだ'
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana Input full-width katakana characters")
+      end
+      it '名前のフリガナが空欄だ登録できない' do
+        @user.first_name_kana = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
       it '名前のフリガナが全角（カタカナ）でないと登録できない' do
         @user.first_name_kana = 'りくたろう'
