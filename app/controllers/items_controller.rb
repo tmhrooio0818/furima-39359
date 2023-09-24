@@ -3,9 +3,9 @@ class ItemsController < ApplicationController
   # ログインしていないユーザーはログインページに促す
   before_action :authenticate_user!, except: [:index, :show]
 
-  def index
-    @items = Item.includes(:user)
-  end
+  # def index
+    # @items = Item.includes(:user)
+  # end
 
   def new
     @item = Item.new
@@ -27,8 +27,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :title, :detail, :category_id, :quality_id, :shipping_fee_id, :prefecture_id, :shipping_date_id, :price).merge(user_id: current_user.id)
   end
 
-  def set_item
-    @item = Item.find(params[:id])
-  end
+  # def set_item
+    # @item = Item.find(params[:id])
+  # end
 
 end
