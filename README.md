@@ -23,7 +23,7 @@
 
 | Column           | Type       | Options                  |
 | user             | references | null:false, foreign:true |
-| title            | string     | null:false               |
+| name             | string     | null:false               |
 | detail           | text       | null:false               |
 | price            | integer    | null:false               |
 | quality_id       | integer    | null:false               |

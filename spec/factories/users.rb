@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :user do
+
     nickname { Faker::Name.name }
     email { Faker::Internet.unique.email }
     # パスワードのランダム生成時に、英数字が少なくとも1文字ずつ入るように'1a'を追加
