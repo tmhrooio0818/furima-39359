@@ -3,9 +3,9 @@ class ItemsController < ApplicationController
   # ログインしていないユーザーはログインページに促す
   before_action :authenticate_user!, except: [:index, :show]
 
-  # def index
+  def index
     # @items = Item.includes(:user)
-  # end
+  end
 
   def new
     @item = Item.new

@@ -15,7 +15,6 @@ class Item < ApplicationRecord
 
   # 以下の項目が空では保存不可
   with_options presence: true do
-    validates :user_id
     validates :image
     validates :title
     validates :detail
